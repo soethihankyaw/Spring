@@ -9,9 +9,15 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "district")
+@Setter
+@Getter
+@AllArgsConstructor
 public class District implements Serializable{
 
 	private static final long serialVersionUID = 1L;

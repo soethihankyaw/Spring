@@ -27,6 +27,7 @@ public class State implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+	
 	@Column(nullable = false, unique = true)
 	private String name;
 
@@ -43,7 +44,7 @@ public class State implements Serializable {
 	
 	@OneToMany(
 			mappedBy = "state",
-			cascade = {CascadeType.PERSIST, CascadeType.MERGE},
+			cascade = CascadeType.PERSIST,
 			orphanRemoval = true
 			)
 	private List<District> distict;
