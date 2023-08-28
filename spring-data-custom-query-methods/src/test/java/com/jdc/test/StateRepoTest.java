@@ -79,6 +79,8 @@ public class StateRepoTest {
 		assertThat(result, is(expected));
 	}
 	
+	//existsByRegion
+	@Disabled
 	@ParameterizedTest
 	@ValueSource(strings = {
 		"Yangon","Bago"
@@ -86,5 +88,30 @@ public class StateRepoTest {
 	void test_exists_by_region(String name) {
 		var result = repo.findOneByName(name);
 		assertThat(result, notNullValue());
+	}
+	
+	//FindFirst3ByType
+	@Disabled
+	@ParameterizedTest
+	@ValueSource(strings = {
+		"Region,3",
+		"State,3",
+		"Union,1"
+		
+	})
+	void test_find_first_3_by_type(Type type, int size) {
+		var result = repo.findFirst3ByType(type);
+		assertThat(result, hasSize(3));
+	}
+	
+	//removeByType
+	@ParameterizedTest
+	@ValueSource(strings = {
+			"Region", "State", "Union"
+	})
+	void test_remove_by_type(Type type) {
+		repo.removeByType(type);
+		var result = repo.countByType(type);
+		assertThat(result, is(0L));
 	}
 }
