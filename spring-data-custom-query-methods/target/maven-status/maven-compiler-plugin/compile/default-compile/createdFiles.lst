@@ -1,0 +1,6 @@
+com\spring\model\entity\District.class
+com\spring\model\entity\State$Type.class
+com\spring\model\entity\State.class
+com\spring\model\repository\DistrictRepository.class
+com\spring\model\repository\StateRepository.class
+com\spring\config\JpaConfiguration.class

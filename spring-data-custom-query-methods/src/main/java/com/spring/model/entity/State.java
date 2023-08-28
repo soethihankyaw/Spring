@@ -13,13 +13,17 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "state")
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class State implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -48,25 +52,6 @@ public class State implements Serializable {
 			orphanRemoval = true
 			)
 	private List<District> distict;
-
-	public State(long id, String name, Type type, String region, String capital, int porpulation) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.type = type;
-		this.region = region;
-		this.capital = capital;
-		this.porpulation = porpulation;
-	}
-
-	public State(String name, Type type, String region, String capital, int porpulation) {
-		super();
-		this.name = name;
-		this.type = type;
-		this.region = region;
-		this.capital = capital;
-		this.porpulation = porpulation;
-	}
 
 	public enum Type {
 		State("State"), Region("Region"), Union("Union Territory");

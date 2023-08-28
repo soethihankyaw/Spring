@@ -38,7 +38,7 @@ public class JpaConfiguration {
 
 		factory.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
 		factory.setJpaProperties(jpaProperties());
-		factory.setPackagesToScan("com.jdc.location.model.entity");
+		factory.setPackagesToScan("com.jdc.model.entity");
 		
 		factory.setDataSource(dataSource);
 
