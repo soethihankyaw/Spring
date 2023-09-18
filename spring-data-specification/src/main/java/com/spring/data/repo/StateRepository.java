@@ -7,4 +7,5 @@ import org.springframework.data.jpa.repository.support.JpaRepositoryImplementati
 import com.spring.data.entity.State;
 
 public interface StateRepository extends JpaRepositoryImplementation<State, Integer>{
+	
 }
