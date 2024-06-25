@@ -2,7 +2,7 @@ package io.bards.testing.config;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-//using for Password encoder
+//using for Password encoder with no password
 public class PlainPasswordEncoder implements PasswordEncoder{
 
 	@Override

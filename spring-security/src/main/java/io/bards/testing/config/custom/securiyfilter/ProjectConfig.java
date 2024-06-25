@@ -1,7 +1,5 @@
-package io.bards.testing.config;
+package io.bards.testing.config.custom.securiyfilter;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.User;
@@ -9,10 +7,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
-@Configuration
+import io.bards.testing.config.PlainPasswordEncoder;
+
+//filter with SecurityFilter 
+//@Configuration
 public class ProjectConfig {
 	
-	@Bean
+//	@Bean
 	SecurityFilterChain configure(HttpSecurity http) throws Exception {
 		
 		http.httpBasic(Customizer.withDefaults());
@@ -30,7 +31,7 @@ public class ProjectConfig {
 		return http.build();
 	}
 	
-	@Bean
+//	@Bean
 	PasswordEncoder passwordEncoder() {
 		return new PlainPasswordEncoder();
 	}
